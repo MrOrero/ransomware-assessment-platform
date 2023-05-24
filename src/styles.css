@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 10px;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+.btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #1e1521;
+  background: #ffffff;
+  padding: 14px 26px 14px 26px;
+  border: solid #b8b4b4 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+  border-color: #ff6201;
+}

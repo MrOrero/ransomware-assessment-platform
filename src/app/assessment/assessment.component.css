@@ -1,0 +1,44 @@
+.vr {
+  padding: 0;
+  background-color: #b8b4b4;
+  width: 5px;
+  height: 600px;
+}
+
+.btn-press {
+  background-color: #ff6201;
+  color: #fff;
+}
+
+.p-timeline-event-connector {
+  background-color: #dee2e6;
+  width: 2px;
+}
+
+.question {
+  max-width: 700px;
+}
+
+.question-section {
+  display: inline;
+  position: relative;
+  top: 100px;
+  left: 20%;
+}
+
+.next-prev {
+  display: inline;
+  position: absolute;
+  top: 500px;
+  left: 70%;
+}
+
+.question-section .question-type {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6201;
+}
+
+/* :host ::ng-deep .p-timeline-event-connector {
+  background-color: red;
+} */

@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="mt-4">
+      <p-timeline [value]="events" class="w-full md:w-20rem" align="right">
+        <ng-template pTemplate="marker" let-event>
+          <span
+            [style.backgroundColor]="event.color"
+            style="height: 25px; width: 3px"
+          >
+          </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+          {{ event.status }}
+        </ng-template>
+      </p-timeline>
+    </div>
+  </div>
+  <div class="vr"></div>
+  <div class="col-sm-8">
+    <div class="question-section">
+      <span class="mt-5n me-2 question-type">
+        {{ questionSection }}
+      </span>
+      {{ questionNumber }}/36
+      <p class="question">
+        {{ currentQuestion.question }}
+      </p>
+      <div class="mt-4 w-75">
+        <button
+          type="button"
+          class="btn me-4 py-2 px-5"
+          (click)="onYes()"
+          [ngClass]="{ 'btn-press': onYesButton === true }"
+        >
+          Yes
+        </button>
+        <button
+          type="button"
+          class="btn py-2 px-5"
+          (click)="onNo()"
+          [ngClass]="{ 'btn-press': onNoButton === true }"
+        >
+          No
+        </button>
+      </div>
+    </div>
+
+    <div class="next-prev">
+      <button
+        [style.visibility]="hasPrevious ? 'visible' : 'hidden'"
+        type="button"
+        class="btn me-2 py-2 px-2"
+        (click)="onPrevious()"
+      >
+        Previous
+      </button>
+      <button
+        [style.visibility]="hasNext ? 'visible' : 'hidden'"
+        [disabled]="!answerClicked"
+        type="button"
+        class="btn py-2 px-2"
+        (click)="onNext()"
+      >
+        Next
+      </button>
+      <button
+        [style.visibility]="questionNumber === 36 ? 'visible' : 'hidden'"
+        type="button"
+        class="btn py-2 px-2"
+        routerLink="/risk-profile"
+      >
+        View Risk Profile
+      </button>
+    </div>
+  </div>
+</div>

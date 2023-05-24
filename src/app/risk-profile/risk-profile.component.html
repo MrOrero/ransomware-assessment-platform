@@ -1,0 +1,73 @@
+<div class="containter mt-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="risk-profile">
+        <div class="risk-percentage">
+          <h3 class="text-center">{{ riskLevel }}</h3>
+          <p class="text-center">
+            You have a {{ riskPercentage }}% risk percentage
+          </p>
+          <div class="text-center my-4">
+            <img
+              src="../../assets/images/{{ image }}.jpg"
+              class="img-size"
+              alt="high risk jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <button type="button" class="btn" (click)="onGetRecommendations()">
+        Get Recommendations
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-5" *ngIf="getRecommendations">
+    <div class="col-sm-12">
+      <div class="solutions">
+        <div class="solution" *ngFor="let solution of solutions; let i = index">
+          <div class="faq_area section-padding-130" id="faq">
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <!-- FAQ Area-->
+                <div class="col-12 col-sm-10 col-lg-8">
+                  <div class="accordion faq-accordian">
+                    <div class="card">
+                      <div class="card-header" [id]="'heading' + i">
+                        <h6
+                          class="mb-0 collapsed"
+                          data-bs-toggle="collapse"
+                          [attr.data-bs-target]="'#collapse' + i"
+                          aria-expanded="false"
+                          [attr.aria-controls]="'collapse' + i"
+                        >
+                          {{ solution.question }}
+                        </h6>
+                      </div>
+                      <div
+                        [id]="'collapse' + i"
+                        class="collapse"
+                        [attr.aria-labelledby]="'heading' + i"
+                        data-bs-parent="#faq"
+                      >
+                        <div class="card-body">
+                          <p>
+                            {{ solution.solution }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
